@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block content %}
+<div
+  style="
+    height: 75vh;
+    background-image: url(https://coolwallpapers.me/picsup/5516264-curtain-wallpapers.jpg);
+    background-size: cover;
+    background-position: center;
+  "
+  class="position-relative w-100"
+>
+  <!-- hero -->
+  <div
+    class="position-absolute text-white d-flex flex-column align-items-start justify-content-center h-100"
+    style="
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+    "
+  >
+    <div class="container mt-auto">
+      <div class="col-md-6 justify-content-center">
+        <!-- on small screens remove display-4 -->
+        <h1 class="mb-4 mt-2 display-4 font-weight-bold">
+          ISTANA <span style="color: #9b5de5">GORDEN</span>
+        </h1>
+        <p style="color: #bbb">
+          Kain Berkualitas, Desain Berkelas, Rumah Menawan
+        </p>
+      </div>
+    </div>
+    <div class="container mt-auto mb-5 text-center">
+      <!-- hover background-color: white; color: black; -->
+      <a href="{% url "katalog" %}" class="btn btn-outline-light">Mulai Menjelajah!</a>
+    </div>
+  </div>
+</div>
+
+<div class="container p-5 text-center text-white">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-3">
+      <div
+        style="border-left: solid #bbb; text-align: left"
+        class="p-2 h2 mt-5"
+      >
+        Prosedur Pemesanan
+      </div>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-3">
+      <img src="https://media.istockphoto.com/id/1387157492/vector/concept-of-dilemma.jpg?s=612x612&w=0&k=20&c=yGjvwG4dej5eeCdh5DadkeScG4GmqtKZVFYfzUbP1b8=" class="bd-placeholder-img rounded-circle mb-3" width="140px" height="140px">
+      <p>Pilih produk yang anda inginkan</p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4CjsybzafTqJAbxwnPbPdW8zZk529ByX1KA&usqp=CAU" class="bd-placeholder-img rounded-circle mb-3" width="140px" height="140px">
+      <p>Isi kustomisasi produk pilihan anda</p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-3">
+      <img src="https://img.freepik.com/free-vector/confirmed-concept-illustration_114360-416.jpg" class="bd-placeholder-img rounded-circle mb-3" width="140px" height="140px">
+      <p>Konfirmasi pesanan melalui WhatsApp</p>
+    </div>
+    <!-- /.col-lg-4 -->
+  </div>
+  <!-- /.row -->
+</div>
+
+<div class="container p-6 center text-center text-white">
+  <h1>Galeri Foto</h1>
+  <hr />
+  <div class="gallery py-2">
+    <img
+      src="https://img.lazcdn.com/g/p/49226686c5c5a5ff69a1c356e3c811e3.jpg_720x720q80.jpg"
+      alt="a house on a mountain"
+      width="400px"
+      height="400px"
+    />
+    <img
+      src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/112/MTA-139595575/no-brand_no-brand_full01.jpg"
+      alt="big rocks with some trees"
+      width="400px"
+      height="400px"
+    />
+    <img src="https://acecurtains.com.sg/wp-content/uploads/2018/12/bedroom-venetian-blinds.webp" alt="a cool landscape" 
+    width="400px"
+    height="400px"/>
+  </div>
+  <div class="gallery">
+    <img
+      src="https://www.pinhome.id/kamus-istilah-properti/wp-content/uploads/2022/04/Vitrase.jpg"
+      alt="a house on a mountain"
+      width="400px"
+      height="400px"
+    />
+    <img src="https://wpcms.kanggo.id/wp-content/uploads/2022/10/221020-wallpaper-dinding-01.jpg" alt="sime pink flowers" 
+    width="400px"
+    height="400px"/>
+    <img src="https://img.ws.mms.shopee.co.id/de0df2b94a5c60c2250c041599be11bc" alt="a cool landscape" 
+    width="400px"
+    height="400px"/>
+  </div>
+</div>
+<br />
+{% endblock %}

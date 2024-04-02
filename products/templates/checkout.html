@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container-fluid p-5 text-white">
+  <div class="row">
+    <p class="h1 fw-bold" id="name">{{ item.nama }}</p>
+    <hr />
+    <p class="fst-italic">
+      {% if item.jenis_produk_id == 2 %}
+      Pembelian paket termasuk aksesori yang ditampilkan di gambar (+pemasangan area malang raya dan sekitarnya).<br>
+      *Ukuran produk Gorden berupa panjang x lebar (cth: 3 x 2) 
+      {% elif item.jenis_produk_id == 3 or item.jenis_produk_id == 5 %}
+      Pembelian sudah termasuk Bracket dan Tutup serta sekrup. 
+      {% elif item.jenis_produk_id == 6 %}
+      Pembelian sudah termasuk kit pemasangan. 
+      {% elif item.jenis_produk_id == 7 %}
+      pembelian wallpaper dalam bentuk roll. setiap roll berukuran 5 meter. a
+      {% else %}
+      -
+      {% endif %}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col p-3">
+      <img
+        src="{{ item.gambar.url }}"
+        width="400"
+        height="400"
+        class="rounded mx-auto d-block"
+      />
+    </div>
+    <div class="col p-3">
+      <div class="row p-1 h2 fw-bold">Kustomisasi</div>
+      <div class="row p-1">Ukuran Produk</div>
+      <div class="row p-1"><input type="text" id="ukuran" name="ukuran" /></div>
+      <div class="row p-1">Pilih Warna yang tersedia</div>
+      <div class="row p-1"><input type="text" id="warna" name="warna" /></div>
+      <div class="row p-1">pilihan kustomisasi lain</div>
+      <div class="row p-1">
+        <textarea
+          id="kustomisasi"
+          name="kustomisasi"
+          rows="7"
+          cols="30"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 text-center">
+    <a href="#" id="button" class="btn btn-success">Konfirmasi Pesanan</a>
+  </div>
+  <div class="container mb-5 text-center">
+    <p class="fst-italic fw-light text-muted">
+      Anda akan meniggalkan laman dan lanjut chat via Whatsapp
+    </p>
+  </div>
+</div>
+<script>
+  const getNama = document.getElementById("name");
+  const getUkuran = document.getElementById("ukuran");
+  const getWarna = document.getElementById("warna");
+  const getKustomisasi = document.getElementById("kustomisasi");
+  const link = document.getElementById("button");
+  link.addEventListener("click", function () {
+    const nama = getNama.innerHTML;
+    const ukuran = getUkuran.value;
+    const warna = getWarna.value;
+    const kustomisasi = getKustomisasi.value;
+    function encodeForUrl(text) {
+      return encodeURIComponent(text);
+    }
+    const encodedNama = encodeForUrl(nama);
+    const encodedUkuran = encodeForUrl(ukuran);
+    const encodedWarna = encodeForUrl(warna);
+    const encodedKustomisasi = encodeForUrl(kustomisasi);
+    const refLink =
+      "https://wa.me/+6285810116993?text=Saya+ingin+memesan+*"+
+      encodedNama +
+      "*+dengan+ukuran+*" +
+      encodedUkuran +
+      "*+dan+warna+*" +
+      encodedWarna +
+      "*+dan+kustomisasi+sebagai+berikut+:+*" +
+      encodedKustomisasi+ "*";
+    window.location.href = refLink; // Redirect on click
+  });
+</script>
+{% endblock content %}
